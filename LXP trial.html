@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>產品試用申請</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-color: #5585fa;
+        }
+        .primary-bg {
+            background-color: var(--primary-color);
+        }
+        .primary-text {
+            color: var(--primary-color);
+        }
+        .primary-border {
+            border-color: var(--primary-color);
+        }
+        .primary-hover:hover {
+            background-color: #4470e8;
+        }
+        
+        /* 自定義浮動動畫 */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes floatReverse {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+        
+        @keyframes slowSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .animate-float-reverse {
+            animation: floatReverse 8s ease-in-out infinite;
+        }
+        
+        .animate-slow-spin {
+            animation: slowSpin 30s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- 頁面上方LOGO區域 -->
+    <header class="bg-white shadow-sm border-b border-gray-200 fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 lg:px-6 py-3 lg:py-4">
+            <div class="flex items-center">
+                <!-- LOGO區域 -->
+                <div class="flex items-center space-x-2 lg:space-x-3">
+                    <!-- LOGO圖片 -->
+                    <div class="w-12 h-12 lg:w-16 lg:h-16 flex items-center justify-center">
+                        <img src="https://assets.platform.blendvision.com/427e5744-d6b5-4ea8-9c73-0d6ffde012a9/image/dc009215-a282-46e0-821b-cc87682e108a/dc009215-a282-46e0-821b-cc87682e108a.png" 
+                             alt="天下學習企業平台" 
+                             class="w-full h-full object-contain">
+                    </div>
+                    <!-- 品牌名稱 -->
+                    <div>
+                        <h1 class="text-lg lg:text-xl font-bold text-gray-800">天下學習企業平台</h1>
+                        <p class="text-xs text-gray-500 hidden sm:block">CommonWealth Learning for business</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex items-center justify-center pt-20">
+        <!-- 裝飾性圖形 -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-4 md:left-10 w-24 md:w-32 h-24 md:h-32 bg-gradient-to-r from-blue-200 to-purple-200 rounded-full opacity-20 animate-pulse"></div>
+            <div class="absolute top-40 right-8 md:right-20 w-20 md:w-24 h-20 md:h-24 bg-gradient-to-r from-pink-200 to-orange-200 rounded-full opacity-30 animate-bounce" style="animation-duration: 3s;"></div>
+            <div class="absolute bottom-32 left-1/4 w-32 md:w-40 h-32 md:h-40 bg-gradient-to-r from-green-200 to-blue-200 rounded-full opacity-15 animate-spin" style="animation-duration: 20s;"></div>
+            <div class="absolute bottom-20 right-4 md:right-10 w-24 md:w-28 h-24 md:h-28 bg-gradient-to-r from-purple-200 to-pink-200 rounded-full opacity-25 animate-ping" style="animation-duration: 4s;"></div>
+            
+            <!-- 新增浮動元素 -->
+            <div class="absolute top-1/3 left-1/3 w-12 md:w-16 h-12 md:h-16 bg-gradient-to-r from-yellow-200 to-orange-200 rounded-full opacity-20 animate-float" style="animation-delay: 1s;"></div>
+            <div class="absolute top-2/3 right-1/3 w-16 md:w-20 h-16 md:h-20 bg-gradient-to-r from-indigo-200 to-blue-200 rounded-full opacity-25 animate-float-reverse" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-8 md:left-20 w-10 md:w-12 h-10 md:h-12 bg-gradient-to-r from-rose-200 to-pink-200 rounded-full opacity-30 animate-pulse" style="animation-delay: 0.5s; animation-duration: 3.5s;"></div>
+            <div class="absolute bottom-1/3 right-1/4 w-28 md:w-36 h-28 md:h-36 bg-gradient-to-r from-teal-200 to-cyan-200 rounded-full opacity-15 animate-slow-spin" style="animation-delay: 1.5s;"></div>
+            
+            <!-- 更多動態元素 -->
+            <div class="absolute top-10 right-1/2 w-6 md:w-8 h-6 md:h-8 bg-gradient-to-r from-violet-200 to-purple-200 rounded-full opacity-25 animate-float" style="animation-delay: 3s;"></div>
+            <div class="absolute bottom-10 left-1/2 w-12 md:w-14 h-12 md:h-14 bg-gradient-to-r from-emerald-200 to-green-200 rounded-full opacity-20 animate-float-reverse" style="animation-delay: 4s;"></div>
+        </div>
+        
+        <!-- 主要內容容器 -->
+        <div class="max-w-7xl w-full mx-auto flex flex-col md:flex-row relative z-10 my-4 md:my-6 lg:my-8 px-4 md:px-6">
+            <!-- 左側產品介紹 -->
+            <div class="w-full md:w-2/5 pr-0 md:pr-6 lg:pr-8 flex flex-col justify-start mb-8 md:mb-0">
+                <div class="max-w-md mx-auto md:mx-0">
+                <h1 class="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-4 md:mb-5 lg:mb-6 text-center md:text-left">
+                    免費申請<br>型錄及試用
+                </h1>
+                <p class="text-sm sm:text-base md:text-base lg:text-lg xl:text-xl text-gray-700 mb-6 md:mb-7 lg:mb-8 leading-relaxed text-center md:text-left">
+                    專為企業打造的全方位學習管理平台，提升員工技能，推動組織成長。<br class="hidden sm:block">
+                    立即線上申請，將有專人為您服務，提供專屬免費型錄與試用帳號。
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-3 md:gap-4 lg:gap-6 mb-6 md:mb-8 lg:mb-12">
+                    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-4 md:p-5 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50">
+                        <div class="flex items-start space-x-3 md:space-x-4">
+                            <div class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="text-white text-lg md:text-xl">👨‍🏫</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base md:text-base lg:text-lg text-gray-800 mb-1 md:mb-1.5 lg:mb-2">客製化學習路徑</h3>
+                                <p class="text-sm md:text-sm lg:text-base text-gray-600">最完整的職級學習地圖、最便利的自訂學習計畫</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-4 md:p-5 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50">
+                        <div class="flex items-start space-x-3 md:space-x-4">
+                            <div class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="text-white text-lg md:text-xl">🔄</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base md:text-base lg:text-lg text-gray-800 mb-1 md:mb-1.5 lg:mb-2">內容功能隨時更新</h3>
+                                <p class="text-sm md:text-sm lg:text-base text-gray-600">天下媒體最近即時內容，快速迭代SaaS平台，高品質沈浸式課程</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-4 md:p-5 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50">
+                        <div class="flex items-start space-x-3 md:space-x-4">
+                            <div class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-r from-pink-500 to-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="text-white text-lg md:text-xl">📊</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base md:text-base lg:text-lg text-gray-800 mb-1 md:mb-1.5 lg:mb-2">視覺化數據管理</h3>
+                                <p class="text-sm md:text-sm lg:text-base text-gray-600">儀表板數據呈現、派課權限分級細緻，學習成果看得見、量得出</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-4 md:p-5 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50">
+                        <div class="flex items-start space-x-3 md:space-x-4">
+                            <div class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-r from-rose-500 to-violet-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="text-white text-lg md:text-xl">🔒</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base md:text-base lg:text-lg text-gray-800 mb-1 md:mb-1.5 lg:mb-2">國際高標資安</h3>
+                                <p class="text-sm md:text-sm lg:text-base text-gray-600">國際大廠認證合作夥伴，串流品質高、成本低</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-4 md:p-5 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50">
+                        <div class="flex items-start space-x-3 md:space-x-4">
+                            <div class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-r from-red-500 to-rose-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="text-white text-lg md:text-xl">🏢</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base md:text-base lg:text-lg text-gray-800 mb-1 md:mb-1.5 lg:mb-2">整合內外部培訓內容</h3>
+                                <p class="text-sm md:text-sm lg:text-base text-gray-600">專屬企業空間，可上傳內部素材，整合報表記錄更完整</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-4 md:p-5 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50">
+                        <div class="flex items-start space-x-3 md:space-x-4">
+                            <div class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="text-white text-lg md:text-xl">🤖</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base md:text-base lg:text-lg text-gray-800 mb-1 md:mb-1.5 lg:mb-2">AI伴學</h3>
+                                <p class="text-sm md:text-sm lg:text-base text-gray-600">摘要重點、互動學習、多國語言翻譯</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+            </div>
+            
+            <!-- 右側申請表格 -->
+            <div class="w-full md:w-3/5 pl-0 md:pl-6 lg:pl-8 flex flex-col justify-center">
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-4 sm:p-6 md:p-7 lg:p-8 border border-white/50">
+                    <div class="w-full">
+                <div class="text-center mb-6 md:mb-7 lg:mb-8">
+                    <h2 class="text-2xl sm:text-3xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-2">免費試用申請</h2>
+                    <p class="text-sm sm:text-base md:text-sm lg:text-base text-gray-600">立即體驗天下學習企業平台的強大功能與服務</p>
+                </div>
+                
+                <form id="trialForm" class="space-y-4 md:space-y-5 lg:space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">姓名 *</label>
+                        <input type="text" id="name" name="name" required 
+                               class="w-full px-3 py-2 md:px-3.5 md:py-2.5 lg:px-4 lg:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm md:text-sm lg:text-base">
+                    </div>
+                    
+                    <div>
+                        <label for="companyPhone" class="block text-sm font-medium text-gray-700 mb-2">公司電話 *</label>
+                        <input type="tel" id="companyPhone" name="companyPhone" required 
+                               class="w-full px-3 py-2 md:px-3.5 md:py-2.5 lg:px-4 lg:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm md:text-sm lg:text-base">
+                    </div>
+                    
+                    <div>
+                        <label for="company" class="block text-sm font-medium text-gray-700 mb-2">公司名稱 *</label>
+                        <input type="text" id="company" name="company" required 
+                               class="w-full px-3 py-2 md:px-3.5 md:py-2.5 lg:px-4 lg:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm md:text-sm lg:text-base">
+                    </div>
+                    
+                    <div>
+                        <label for="jobTitle" class="block text-sm font-medium text-gray-700 mb-2">部門/職稱 *</label>
+                        <input type="text" id="jobTitle" name="jobTitle" required 
+                               class="w-full px-3 py-2 md:px-3.5 md:py-2.5 lg:px-4 lg:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm md:text-sm lg:text-base">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">公司Email *</label>
+                        <input type="email" id="email" name="email" required 
+                               class="w-full px-3 py-2 md:px-3.5 md:py-2.5 lg:px-4 lg:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm md:text-sm lg:text-base">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">收件地址 *</label>
+                        <div class="space-y-3">
+                            <div>
+                                <input type="text" id="postalCode" name="postalCode" required 
+                                       placeholder="郵遞區號"
+                                       class="w-full px-3 py-2 md:px-3.5 md:py-2.5 lg:px-4 lg:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm md:text-sm lg:text-base">
+                            </div>
+                            <div>
+                                <textarea id="address" name="address" rows="3" required 
+                                          placeholder="請填寫完整收件地址..."
+                                          class="w-full px-3 py-2 md:px-3.5 md:py-2.5 lg:px-4 lg:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none text-sm md:text-sm lg:text-base"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-3">您是從何處得知天下學習? (可複選) *</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" name="source" value="google" class="mr-2 w-4 h-4 primary-text focus:ring-2 focus:ring-blue-500">
+                                <span class="text-xs sm:text-sm md:text-xs lg:text-sm text-gray-700">Google廣告（關鍵字）</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="source" value="linkedin" class="mr-2 w-4 h-4 primary-text focus:ring-2 focus:ring-blue-500">
+                                <span class="text-xs sm:text-sm md:text-xs lg:text-sm text-gray-700">Linkedin</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="source" value="facebook" class="mr-2 w-4 h-4 primary-text focus:ring-2 focus:ring-blue-500">
+                                <span class="text-xs sm:text-sm md:text-xs lg:text-sm text-gray-700">Facebook廣告</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="source" value="friend" class="mr-2 w-4 h-4 primary-text focus:ring-2 focus:ring-blue-500">
+                                <span class="text-xs sm:text-sm md:text-xs lg:text-sm text-gray-700">朋友介紹</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="source" value="edm" class="mr-2 w-4 h-4 primary-text focus:ring-2 focus:ring-blue-500">
+                                <span class="text-xs sm:text-sm md:text-xs lg:text-sm text-gray-700">電子報/EDM</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="source" value="other" class="mr-2 w-4 h-4 primary-text focus:ring-2 focus:ring-blue-500">
+                                <span class="text-xs sm:text-sm md:text-xs lg:text-sm text-gray-700">其他</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-3">申請試用目的</label>
+                        <div class="space-y-2">
+                            <label class="flex items-start">
+                                <input type="radio" name="purpose" value="evaluation" class="mr-2 w-4 h-4 primary-text focus:ring-2 focus:ring-blue-500 mt-0.5">
+                                <span class="text-xs sm:text-sm md:text-xs lg:text-sm text-gray-700">評估數位學習平台，包含內容與後台管理功能</span>
+                            </label>
+                            <label class="flex items-start">
+                                <input type="radio" name="purpose" value="content" class="mr-2 w-4 h-4 primary-text focus:ring-2 focus:ring-blue-500 mt-0.5">
+                                <span class="text-xs sm:text-sm md:text-xs lg:text-sm text-gray-700">尋找主題式課程內容</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-3">請問是否有數位學習規劃？</label>
+                        <div class="flex flex-col sm:flex-row md:flex-row sm:space-x-8 md:space-x-6 lg:space-x-8 space-y-2 sm:space-y-0 md:space-y-0">
+                            <label class="flex items-center">
+                                <input type="radio" name="planning" value="yes" class="mr-2 w-4 h-4 primary-text focus:ring-2 focus:ring-blue-500">
+                                <span class="text-xs sm:text-sm md:text-xs lg:text-sm text-gray-700">是</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="planning" value="no" class="mr-2 w-4 h-4 primary-text focus:ring-2 focus:ring-blue-500">
+                                <span class="text-xs sm:text-sm md:text-xs lg:text-sm text-gray-700">否</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-3">是否使用過數位學習平台？</label>
+                        <div class="flex flex-col sm:flex-row md:flex-row sm:space-x-8 md:space-x-6 lg:space-x-8 space-y-2 sm:space-y-0 md:space-y-0">
+                            <label class="flex items-center">
+                                <input type="radio" name="experience" value="yes" class="mr-2 w-4 h-4 primary-text focus:ring-2 focus:ring-blue-500">
+                                <span class="text-xs sm:text-sm md:text-xs lg:text-sm text-gray-700">是</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="experience" value="no" class="mr-2 w-4 h-4 primary-text focus:ring-2 focus:ring-blue-500">
+                                <span class="text-xs sm:text-sm md:text-xs lg:text-sm text-gray-700">否</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="question" class="block text-sm font-medium text-gray-700 mb-2">我想問的問題是</label>
+                        <textarea id="question" name="question" rows="4" 
+                                  placeholder="請輸入您想詢問的問題..."
+                                  class="w-full px-3 py-2 md:px-3.5 md:py-2.5 lg:px-4 lg:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none text-sm md:text-sm lg:text-base"></textarea>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <input type="checkbox" id="agree" name="agree" required 
+                               class="mt-1 w-4 h-4 primary-text focus:ring-2 focus:ring-blue-500 flex-shrink-0">
+                        <label for="agree" class="text-xs sm:text-sm md:text-xs lg:text-sm text-gray-600">
+                            本人已閱讀 <a href="https://biz.cwlearning.com.tw/custom-webpage/e10162e0-4cc3-49d9-a706-39413cfeab07" target="_blank" class="text-blue-600 underline">個資聲明同意書</a>（如您需瞭解聲明內容請點選）並同意提供以上資料包括姓名、電話、聯絡信箱及職稱等予本公司，並保留此同意記錄供日後查驗。*
+                        </label>
+                    </div>
+                    
+                    <button type="submit" 
+                            class="w-full primary-bg primary-hover text-white font-semibold py-3 px-4 md:px-5 lg:px-6 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl text-sm md:text-sm lg:text-base">
+                        立即申請試用
+                    </button>
+                </form>
+                
+                <!-- 申請資訊 -->
+                <div class="bg-gray-50 rounded-2xl p-4 md:p-5 lg:p-6 mt-4 md:mt-5 lg:mt-6 border border-gray-200">
+                    <div class="text-xs sm:text-sm md:text-xs lg:text-sm text-gray-700 leading-relaxed">
+                        <p class="mb-3">
+                            <span class="font-semibold text-gray-800">📋 申請須知：</span><br>
+                            帳號試用申請將於審核後由專人通知是否符合申請資格，資格符合者將於5個工作天後開啟試用帳號，敝社保留申請開放權。
+                        </p>
+
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 成功提示 -->
+    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-lg p-6 lg:p-8 max-w-md w-full mx-auto text-center">
+            <div class="w-12 h-12 lg:w-16 lg:h-16 primary-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-white text-xl lg:text-2xl">✓</span>
+            </div>
+            <h3 class="text-lg lg:text-xl font-bold text-gray-800 mb-2">申請成功！</h3>
+            <p class="text-sm lg:text-base text-gray-600 mb-6">我們已收到您的試用申請，將在24小時內透過電子郵件與您聯繫。</p>
+            <button onclick="closeModal()" 
+                    class="primary-bg primary-hover text-white px-6 py-2 rounded-lg transition-colors text-sm lg:text-base">
+                確定
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('trialForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 驗證必填欄位
+            const name = document.getElementById('name').value.trim();
+            const companyPhone = document.getElementById('companyPhone').value.trim();
+            const company = document.getElementById('company').value.trim();
+            const jobTitle = document.getElementById('jobTitle').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const postalCode = document.getElementById('postalCode').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const agree = document.getElementById('agree').checked;
+            
+            // 檢查來源複選框是否至少選擇一個
+            const sourceCheckboxes = document.querySelectorAll('input[name="source"]:checked');
+            
+            if (!name || !companyPhone || !company || !jobTitle || !email || !postalCode || !address || !agree) {
+                alert('請填寫所有必填欄位並同意個資聲明同意書');
+                return;
+            }
+            
+            if (sourceCheckboxes.length === 0) {
+                alert('請至少選擇一個得知天下學習的來源');
+                return;
+            }
+            
+            // 驗證電子郵件格式
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('請輸入有效的電子郵件地址');
+                return;
+            }
+            
+            // 顯示成功訊息
+            document.getElementById('successModal').classList.remove('hidden');
+            document.getElementById('successModal').classList.add('flex');
+            
+            // 重置表單
+            this.reset();
+        });
+        
+        function closeModal() {
+            document.getElementById('successModal').classList.add('hidden');
+            document.getElementById('successModal').classList.remove('flex');
+        }
+        
+        // 點擊背景關閉彈窗
+        document.getElementById('successModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96388f4736a8843a',t:'MTc1MzI0NjI1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
