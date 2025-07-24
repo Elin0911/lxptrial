@@ -8,9 +8,11 @@
     <style>
         /* 定義主要顏色變數 */
         :root {
-            --primary-color: #5585fa;
-            --success-color: #28a745;
-            --error-color: #dc3545;
+            --primary-color: #5585fa; /* 主藍色 */
+            --success-color: #28a745; /* 成功綠色 (保持不變) */
+            --error-color: #dc3545;   /* 錯誤紅色 (保持不變) */
+            --light-gray: #f4f6f6;    /* 淺灰色 */
+            --dark-blue: #3a6cd9;     /* 較深的藍色，用於漸變 */
         }
         /* 應用主要顏色到背景、文字、邊框 */
         .primary-bg {
@@ -75,7 +77,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-[#f4f6f6] font-sans">
     <!-- 頁面上方LOGO區域 -->
     <header class="bg-white shadow-sm border-b border-gray-200 fixed top-0 left-0 right-0 z-50">
         <div class="max-w-7xl mx-auto px-4 lg:px-6 py-2 lg:py-3">
@@ -98,23 +100,24 @@
         </div>
     </header>
     
-    <div class="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex items-center justify-center pt-20">
-        <!-- 裝飾性圖形 - 將 position 從 absolute 改為 fixed -->
+    <!-- 主內容區塊，背景調整為淺灰色 -->
+    <div class="min-h-screen bg-[#f4f6f6] flex items-center justify-center pt-20">
+        <!-- 裝飾性圖形 - 固定在視窗中，顏色調整為藍色系漸變 -->
         <div class="fixed inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute top-20 left-4 md:left-10 w-24 md:w-32 h-24 md:h-32 bg-gradient-to-r from-blue-200 to-purple-200 rounded-full opacity-20 animate-pulse"></div>
-            <div class="absolute top-40 right-8 md:right-20 w-20 md:w-24 h-20 md:h-24 bg-gradient-to-r from-pink-200 to-orange-200 rounded-full opacity-30 animate-bounce" style="animation-duration: 3s;"></div>
-            <div class="absolute bottom-32 left-1/4 w-32 md:w-40 h-32 md:h-40 bg-gradient-to-r from-green-200 to-blue-200 rounded-full opacity-15 animate-spin" style="animation-duration: 20s;"></div>
-            <div class="absolute bottom-20 right-4 md:right-10 w-24 md:w-28 h-24 md:h-28 bg-gradient-to-r from-purple-200 to-pink-200 rounded-full opacity-25 animate-ping" style="animation-duration: 4s;"></div>
+            <div class="absolute top-20 left-4 md:left-10 w-24 md:w-32 h-24 md:h-32 bg-gradient-to-r from-blue-200 to-blue-300 rounded-full opacity-20 animate-pulse"></div>
+            <div class="absolute top-40 right-8 md:right-20 w-20 md:w-24 h-20 md:h-24 bg-gradient-to-r from-blue-300 to-blue-400 rounded-full opacity-30 animate-bounce" style="animation-duration: 3s;"></div>
+            <div class="absolute bottom-32 left-1/4 w-32 md:w-40 h-32 md:h-40 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full opacity-15 animate-spin" style="animation-duration: 20s;"></div>
+            <div class="absolute bottom-20 right-4 md:right-10 w-24 md:w-28 h-24 md:h-28 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full opacity-25 animate-ping" style="animation-duration: 4s;"></div>
             
-            <!-- 新增浮動元素 -->
-            <div class="absolute top-1/3 left-1/3 w-12 md:w-16 h-12 md:h-16 bg-gradient-to-r from-yellow-200 to-orange-200 rounded-full opacity-20 animate-float" style="animation-delay: 1s;"></div>
-            <div class="absolute top-2/3 right-1/3 w-16 md:w-20 h-16 md:h-20 bg-gradient-to-r from-indigo-200 to-blue-200 rounded-full opacity-25 animate-float-reverse" style="animation-delay: 2s;"></div>
-            <div class="absolute top-1/2 left-8 md:left-20 w-10 md:w-12 h-10 md:h-12 bg-gradient-to-r from-rose-200 to-pink-200 rounded-full opacity-30 animate-pulse" style="animation-delay: 0.5s; animation-duration: 3.5s;"></div>
-            <div class="absolute bottom-1/3 right-1/4 w-28 md:w-36 h-28 md:h-36 bg-gradient-to-r from-teal-200 to-cyan-200 rounded-full opacity-15 animate-slow-spin" style="animation-delay: 1.5s;"></div>
+            <!-- 新增浮動元素，顏色調整為藍色系漸變 -->
+            <div class="absolute top-1/3 left-1/3 w-12 md:w-16 h-12 md:h-16 bg-gradient-to-r from-blue-100 to-blue-200 rounded-full opacity-20 animate-float" style="animation-delay: 1s;"></div>
+            <div class="absolute top-2/3 right-1/3 w-16 md:w-20 h-16 md:h-20 bg-gradient-to-r from-blue-200 to-blue-300 rounded-full opacity-25 animate-float-reverse" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-8 md:left-20 w-10 md:w-12 h-10 md:h-12 bg-gradient-to-r from-blue-300 to-blue-400 rounded-full opacity-30 animate-pulse" style="animation-delay: 0.5s; animation-duration: 3.5s;"></div>
+            <div class="absolute bottom-1/3 right-1/4 w-28 md:w-36 h-28 md:h-36 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full opacity-15 animate-slow-spin" style="animation-delay: 1.5s;"></div>
             
-            <!-- 更多動態元素 -->
-            <div class="absolute top-10 right-1/2 w-6 md:w-8 h-6 md:h-8 bg-gradient-to-r from-violet-200 to-purple-200 rounded-full opacity-25 animate-float" style="animation-delay: 3s;"></div>
-            <div class="absolute bottom-10 left-1/2 w-12 md:w-14 h-12 md:h-14 bg-gradient-to-r from-emerald-200 to-green-200 rounded-full opacity-20 animate-float-reverse" style="animation-delay: 4s;"></div>
+            <!-- 更多動態元素，顏色調整為藍色系漸變 -->
+            <div class="absolute top-10 right-1/2 w-6 md:w-8 h-6 md:h-8 bg-gradient-to-r from-blue-50 to-blue-100 rounded-full opacity-25 animate-float" style="animation-delay: 3s;"></div>
+            <div class="absolute bottom-10 left-1/2 w-12 md:w-14 h-12 md:h-14 bg-gradient-to-r from-blue-100 to-blue-200 rounded-full opacity-20 animate-float-reverse" style="animation-delay: 4s;"></div>
         </div>
         
         <!-- 主要內容容器 -->
@@ -122,7 +125,8 @@
             <!-- 左側產品介紹 -->
             <div class="w-full md:w-2/5 pr-0 md:pr-6 lg:pr-8 flex flex-col justify-start mb-8 md:mb-0">
                 <div class="max-w-md mx-auto md:mx-0">
-                <h1 class="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-4 md:mb-5 lg:mb-6 text-center md:text-left">
+                <!-- 標題漸變色調整為藍色系 -->
+                <h1 class="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent mb-4 md:mb-5 lg:mb-6 text-center md:text-left">
                     免費申請<br>型錄及試用
                 </h1>
                 <p class="text-sm sm:text-base md:text-base lg:text-lg xl:text-xl text-gray-700 mb-6 md:mb-7 lg:mb-8 leading-relaxed text-center md:text-left">
@@ -131,9 +135,10 @@
                 </p>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-3 md:gap-4 lg:gap-6 mb-6 md:mb-8 lg:mb-12">
+                    <!-- 功能特色區塊圖示背景調整為藍色系漸變 -->
                     <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-4 md:p-5 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50">
                         <div class="flex items-start space-x-3 md:space-x-4">
-                            <div class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <div class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
                                 <span class="text-white text-lg md:text-xl">👨‍🏫</span>
                             </div>
                             <div>
@@ -145,7 +150,7 @@
                     
                     <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-4 md:p-5 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50">
                         <div class="flex items-start space-x-3 md:space-x-4">
-                            <div class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <div class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
                                 <span class="text-white text-lg md:text-xl">🔄</span>
                             </div>
                             <div>
@@ -157,7 +162,7 @@
                     
                     <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-4 md:p-5 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50">
                         <div class="flex items-start space-x-3 md:space-x-4">
-                            <div class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-r from-pink-500 to-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <div class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
                                 <span class="text-white text-lg md:text-xl">📊</span>
                             </div>
                             <div>
@@ -169,7 +174,7 @@
                     
                     <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-4 md:p-5 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50">
                         <div class="flex items-start space-x-3 md:space-x-4">
-                            <div class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-r from-rose-500 to-violet-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <div class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
                                 <span class="text-white text-lg md:text-xl">🔒</span>
                             </div>
                             <div>
@@ -181,7 +186,7 @@
                     
                     <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-4 md:p-5 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50">
                         <div class="flex items-start space-x-3 md:space-x-4">
-                            <div class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-r from-red-500 to-rose-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <div class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
                                 <span class="text-white text-lg md:text-xl">🏢</span>
                             </div>
                             <div>
@@ -193,7 +198,7 @@
                     
                     <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-4 md:p-5 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50">
                         <div class="flex items-start space-x-3 md:space-x-4">
-                            <div class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <div class="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
                                 <span class="text-white text-lg md:text-xl">🤖</span>
                             </div>
                             <div>
