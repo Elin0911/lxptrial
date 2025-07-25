@@ -275,7 +275,7 @@
                         </div>
                     </div>
 
-                    <!-- 統一編號欄位，已調整為必填並新增提示文字 -->
+                    <!-- 統一編號欄位 -->
                     <div>
                         <label for="unifiedBusinessNumber" class="block text-sm font-medium text-gray-700 mb-2">統一編號 *</label>
                         <input type="text" id="unifiedBusinessNumber" name="unifiedBusinessNumber" required
@@ -283,6 +283,22 @@
                                placeholder="若無統一編號請填無或說明"
                                class="w-full px-3 py-2 md:px-3.5 md:py-2.5 lg:px-4 lg:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm md:text-sm lg:text-base">
                         <p id="unifiedBusinessNumber-error" class="text-xs error-text mt-1 hidden" aria-live="polite"></p>
+                    </div>
+
+                    <!-- 新增推薦碼欄位，非必填 -->
+                    <div>
+                        <label for="referralCode" class="block text-sm font-medium text-gray-700 mb-2">推薦碼</label>
+                        <input type="text" id="referralCode" name="referralCode"
+                               aria-describedby="referralCode-error"
+                               class="w-full px-3 py-2 md:px-3.5 md:py-2.5 lg:px-4 lg:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm md:text-sm lg:text-base">
+                        <p id="referralCode-error" class="text-xs error-text mt-1 hidden" aria-live="polite"></p>
+                    </div>
+                    
+                    <div>
+                        <label for="question" class="block text-sm font-medium text-gray-700 mb-2">我想問的問題是</label>
+                        <textarea id="question" name="question" rows="4" 
+                                  placeholder="請輸入您想詢問的問題..."
+                                  class="w-full px-3 py-2 md:px-3.5 md:py-2.5 lg:px-4 lg:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none text-sm md:text-sm lg:text-base"></textarea>
                     </div>
                     
                     <div>
@@ -523,6 +539,9 @@
             
             // 統一編號現在是必填
             isValid = validateInput(document.getElementById('unifiedBusinessNumber'), document.getElementById('unifiedBusinessNumber-error'), '請輸入統一編號，若無請填無或說明') && isValid;
+
+            // 推薦碼是非必填，因此不需要在此處進行 validateInput 檢查
+            // const referralCode = document.getElementById('referralCode').value.trim();
 
             // 驗證來源複選框
             isValid = validateCheckboxGroup('source', document.getElementById('source-error'), '請至少選擇一個得知天下學習的來源') && isValid;
